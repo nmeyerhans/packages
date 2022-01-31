@@ -1,13 +1,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=enviromon
-PKG_VERSION:=0.3
+PKG_VERSION:=0.4
 PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/enviromon-$(PKG_VERSION)
 PKG_SOURCE:=enviromon-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://ssl.morgul.net/
-PKG_HASH:=eba67b6158c3aa7fda1e95f9c7ecefc5d6e88baf9ae6ce6e13d510455b31616a
+PKG_HASH:=4162c1ccafb2fe999eb775ec9fec25ba80090731d6cd8bad429c30ec7e8c5f2e
 
 include $(INCLUDE_DIR)/package.mk
 
