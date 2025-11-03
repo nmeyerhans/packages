@@ -1,13 +1,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=enviromon
-PKG_VERSION:=0.4.1
+PKG_VERSION:=0.4.4
 PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/enviromon-$(PKG_VERSION)
 PKG_SOURCE:=enviromon-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://ssl.morgul.net/
-PKG_HASH:=1175955597da81405df09cd9cd8cf407a92b2dd4e9c6475994f7ad396c9e1869
+PKG_HASH:=08e81f4c43dcdfb08cd64ec4e089161b5d218343437a1c636d2d10ef8c029873
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -38,6 +38,10 @@ define Package/enviromon/install
 	$(INSTALL_BIN) files/tempread-runner.sh $(1)/usr/bin/tempread-runner
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) files/tempread.init $(1)/etc/init.d/tempread
+endef
+
+define Build/Compile
+	$(call Build/Compile/Default,tempread)
 endef
 
 $(eval $(call BuildPackage,enviromon))
